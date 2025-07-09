@@ -1,4 +1,4 @@
-{
+ {
   "name": "IMAGES OF SCRIPT TO TELEGRAM",
   "nodes": [
     {
@@ -101,7 +101,7 @@
         "chatId": "YOUR_TELEGRAM_CHAT_ID",
         "binaryData": true,
         "additionalFields": {
-          "caption": "SCENE 1"
+          "caption": "={{ $(' SCENE 1').item.json.sceneMessage }}"
         }
       },
       "type": "n8n-nodes-base.telegram",
@@ -112,7 +112,7 @@
       ],
       "id": "10ebba48-d7b2-45e7-b7b5-948c63ffaef7",
       "name": "Send a photo message",
-      "webhookId": "REPLACE_ME",
+      "webhookId": "YOUR_WEBHOOK_URL",
       "credentials": {
         "telegramApi": {
           "id": "ZL9aC3Os0fzjivc1",
@@ -136,7 +136,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -340,
+        -100,
         1140
       ],
       "id": "efdbaa83-410b-44a2-8945-70310f66808a",
@@ -148,7 +148,7 @@
         "chatId": "YOUR_TELEGRAM_CHAT_ID",
         "binaryData": true,
         "additionalFields": {
-          "caption": "SCENE 2"
+          "caption": "={{ $(' SCENE 2').item.json.sceneMessage }}"
         }
       },
       "type": "n8n-nodes-base.telegram",
@@ -159,7 +159,7 @@
       ],
       "id": "ffa626e1-d194-4bf5-9cd4-af588a7ae206",
       "name": "Send a photo message1",
-      "webhookId": "REPLACE_ME",
+      "webhookId": "YOUR_WEBHOOK_URL",
       "credentials": {
         "telegramApi": {
           "id": "ZL9aC3Os0fzjivc1",
@@ -173,7 +173,7 @@
         "chatId": "YOUR_TELEGRAM_CHAT_ID",
         "binaryData": true,
         "additionalFields": {
-          "caption": "SCENE 3"
+          "caption": "={{ $('  SCENE 3').item.json.sceneMessage }}"
         }
       },
       "type": "n8n-nodes-base.telegram",
@@ -184,7 +184,7 @@
       ],
       "id": "00fc79ec-c5e8-4038-bcb1-1bdeb3c38d91",
       "name": "Send a photo message2",
-      "webhookId": "REPLACE_ME",
+      "webhookId": "YOUR_WEBHOOK_URL",
       "credentials": {
         "telegramApi": {
           "id": "ZL9aC3Os0fzjivc1",
@@ -198,7 +198,7 @@
         "chatId": "YOUR_TELEGRAM_CHAT_ID",
         "binaryData": true,
         "additionalFields": {
-          "caption": "SCENE 4"
+          "caption": "={{ $('  SCENE 4').item.json.sceneMessage }}"
         }
       },
       "type": "n8n-nodes-base.telegram",
@@ -209,7 +209,7 @@
       ],
       "id": "c23200a3-681b-4bde-b444-89022af45599",
       "name": "Send a photo message3",
-      "webhookId": "REPLACE_ME",
+      "webhookId": "YOUR_WEBHOOK_URL",
       "credentials": {
         "telegramApi": {
           "id": "ZL9aC3Os0fzjivc1",
@@ -223,7 +223,7 @@
         "chatId": "YOUR_TELEGRAM_CHAT_ID",
         "binaryData": true,
         "additionalFields": {
-          "caption": "SCENE 5"
+          "caption": "={{ $('  SCENE 5').item.json.sceneMessage }}"
         }
       },
       "type": "n8n-nodes-base.telegram",
@@ -234,32 +234,7 @@
       ],
       "id": "20a92fe8-68b4-4289-adba-6a39aba1eff0",
       "name": "Send a photo message4",
-      "webhookId": "REPLACE_ME",
-      "credentials": {
-        "telegramApi": {
-          "id": "ZL9aC3Os0fzjivc1",
-          "name": " SCRIPT FOR VEDIO"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "sendPhoto",
-        "chatId": "YOUR_TELEGRAM_CHAT_ID",
-        "binaryData": true,
-        "additionalFields": {
-          "caption": "SCENE 6"
-        }
-      },
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        -100,
-        1140
-      ],
-      "id": "7b46dd0e-6c53-44b9-ba65-55ca6f96b907",
-      "name": "Send a photo message5",
-      "webhookId": "REPLACE_ME",
+      "webhookId": "YOUR_WEBHOOK_URL",
       "credentials": {
         "telegramApi": {
           "id": "ZL9aC3Os0fzjivc1",
@@ -646,7 +621,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -560,
+        -320,
         1140
       ],
       "id": "572320c9-362a-4fc4-858b-eb0fd0b56e7f",
@@ -761,6 +736,44 @@
       ],
       "id": "dddac3c2-bc9a-44b6-8872-99bbdf99181a",
       "name": "  IMAGE DOWNLOAD4"
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "binaryData": true,
+        "additionalFields": {
+          "caption": "={{ $('Code').item.json.sceneMessage }} "
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        100,
+        1140
+      ],
+      "id": "99baa5fc-ee37-4cce-aa37-60c705f42128",
+      "name": "Send a photo message5",
+      "webhookId": "YOUR_WEBHOOK_URL",
+      "credentials": {
+        "telegramApi": {
+          "id": "ZL9aC3Os0fzjivc1",
+          "name": " SCRIPT FOR VEDIO"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": " const sceneMessage = $(' SCENE 6').first().json.sceneMessage;\n\nconst lines = sceneMessage.split('\\n');\n\nconst cutoffIndex = lines.findIndex(line => line.includes('MOTION RHYTHM BREAKDOWN'));\n\nconst trimmed = cutoffIndex !== -1\n  ? lines.slice(0, cutoffIndex).join('\\n')\n  : sceneMessage;\n\nreturn [\n  {\n    json: {\n      sceneMessage: trimmed\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -580,
+        1160
+      ],
+      "id": "39390df2-b94f-4162-9f2b-ef367d839d89",
+      "name": "Code"
     }
   ],
   "pinData": {},
@@ -937,7 +950,7 @@
       "main": [
         [
           {
-            "node": " IMAGE URL GENERATION4",
+            "node": "Code",
             "type": "main",
             "index": 0
           }
@@ -1064,13 +1077,24 @@
           }
         ]
       ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": " IMAGE URL GENERATION4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "c3673c3f-834e-4b13-ac77-3c5d6c73c100",
+  "versionId": "b100590f-42f2-47db-808a-4daa85238ed1",
   "meta": {
     "instanceId": "REPLACE_ME"
   },
